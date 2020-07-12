@@ -4,6 +4,7 @@ import DataRange from './componentes/DataRange';
 import Summary from './componentes/Summary';
 import TransactionService from './services/TransactionsService';
 import Loader from './componentes/Loader';
+import TransactionList from './componentes/TransactionList';
 
 export default function App() {
 
@@ -45,8 +46,10 @@ export default function App() {
     <div className="container">
       <Header />
       <DataRange onChangeDateCbk={onDataChange} />
-      <Summary transactions={transactions} />
       <Loader show={retrievingData} />
+      <Summary transactions={transactions} />
+      <TransactionList transactionsList={transactions} />
+      
     </div>
   );
 }
