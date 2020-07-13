@@ -1,5 +1,6 @@
 import React, { useState  } from 'react'
 import Transaction from './Transaction'
+import TransactionAdd from './TransactionAdd';
 
 export default function TransactionList({ transactionsList }) {
 
@@ -21,7 +22,7 @@ export default function TransactionList({ transactionsList }) {
         <div>
             <div className="row input-field">
                 <div className="col s3">
-                    <a href="#" className="waves-effect waves-light btn"><i className="material-icons left">control_point</i>NOVO LANÇAMENTO</a>
+                    <TransactionAdd transactionData={null}  />
                 </div>
                 <div className="col s9">
                     <input placeholder="Filtro" id="filtro" type="text" className="validate" defaultValue={filter} onKeyUp={onChangeFilter} />

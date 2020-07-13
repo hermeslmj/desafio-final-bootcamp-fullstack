@@ -6,6 +6,7 @@ import TransactionService from './services/TransactionsService';
 import Loader from './componentes/Loader';
 import TransactionList from './componentes/TransactionList';
 
+
 export default function App() {
 
   const [retrievingData, setRetrievingData] = useState(false);
@@ -49,6 +50,7 @@ export default function App() {
       <Loader show={retrievingData} />
       <Summary transactions={transactions} />
       <TransactionList transactionsList={transactions} />
+      
       
     </div>
   );
