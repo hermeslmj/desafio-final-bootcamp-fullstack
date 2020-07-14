@@ -12,12 +12,16 @@ export default function App() {
   const [retrievingData, setRetrievingData] = useState(false);
   const [dateRange, setDateRange] = useState("2019-01");
   const [transactions, setTransactions] = useState([]);
+  const [forceRefresh, setForceRefresh] = useState(false);
 
   const onDataChange = (newDate) => {
     if(newDate !== dateRange)
       setDateRange(newDate);
   }
 
+  const forceReloadState = () => {
+    setForceRefresh(!forceRefresh);
+  }
 
   useEffect( () => {
       setRetrievingData(true);
@@ -38,7 +42,7 @@ export default function App() {
       }
 
       getAllTransactions();
-    }, [dateRange]);
+    }, [dateRange, forceRefresh]);
 
 
 
@@ -49,7 +53,7 @@ export default function App() {
       <DataRange onChangeDateCbk={onDataChange} />
       <Loader show={retrievingData} />
       <Summary transactions={transactions} />
-      <TransactionList transactionsList={transactions} />
+      <TransactionList transactionsList={transactions} fnReload={forceReloadState} />
       
       
     </div>

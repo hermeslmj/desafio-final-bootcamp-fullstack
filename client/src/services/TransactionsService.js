@@ -18,7 +18,7 @@ const update = (id, data) => {
 };
 
 const remove = (id) => {
-  return http.delete(`/v/${id}`);
+  return http.delete(`/transaction/${id}`);
 };
 
 export default {

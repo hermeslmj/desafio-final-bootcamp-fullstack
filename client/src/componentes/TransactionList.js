@@ -2,7 +2,7 @@ import React, { useState  } from 'react'
 import Transaction from './Transaction'
 import TransactionAdd from './TransactionAdd';
 
-export default function TransactionList({ transactionsList }) {
+export default function TransactionList({ transactionsList, fnReload }) {
 
     let transactions = transactionsList.transactions;
 
@@ -22,7 +22,7 @@ export default function TransactionList({ transactionsList }) {
         <div>
             <div className="row input-field">
                 <div className="col s3">
-                    <TransactionAdd transactionData={null}  />
+                    <TransactionAdd transactionData={null} fnReload={fnReload}  />
                 </div>
                 <div className="col s9">
                     <input placeholder="Filtro" id="filtro" type="text" className="validate" defaultValue={filter} onKeyUp={onChangeFilter} />
@@ -31,7 +31,7 @@ export default function TransactionList({ transactionsList }) {
 
             {
                 transactions.filter(x => (filter !== "") ? x.description.toLowerCase().includes(filter.toLowerCase())  : x ).map((element) => {
-                    return (<Transaction key={element._id} transaction={element} />)
+                    return (<Transaction key={element._id} transaction={element} fnReload={fnReload} />)
                 })
             }
 
