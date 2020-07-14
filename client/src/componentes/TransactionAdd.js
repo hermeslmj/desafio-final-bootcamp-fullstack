@@ -30,6 +30,7 @@ export default function TransactionAdd({ transactionData, fnReload }) {
             right: 'auto',
             bottom: 'auto',
             marginRight: '-50%',
+            width: '50%',
             transform: 'translate(-50%, -50%)'
         }
     };
@@ -216,7 +217,6 @@ export default function TransactionAdd({ transactionData, fnReload }) {
                             </div>
                         </div>
                     </form>
-                    {JSON.stringify(transactionData)}
                 </div>
             </Modal>
         </div>
