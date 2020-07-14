@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //Define a URL base da origem para consumo do servico
 export default axios.create({
-  baseURL: 'http://financeiro-desafio-final.herokuapp.com/api',
+  baseURL: 'https://financeiro-desafio-final.herokuapp.com/api',
   headers: {
     'Content-type': 'application/json',
   },
