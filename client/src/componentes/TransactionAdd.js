@@ -66,7 +66,6 @@ export default function TransactionAdd({ transactionData, fnReload }) {
             TransactionService.create(transactionData).then((response) => {
                 if(response.status === 200) {
                     alert("Nova transação criada com sucesso");
-                    console.log(response.data);
                     fnReload();
                 }
                 else{
@@ -80,7 +79,6 @@ export default function TransactionAdd({ transactionData, fnReload }) {
             TransactionService.update(transactionData._id, transactionData).then((response) => {
                 if(response.status === 200) {
                     alert("Transação editada com sucesso");
-                    console.log(response.data);
                     fnReload();
                 }
                 else{
