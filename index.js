@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 app.use(cors(
   {
-    origin: "https://financeiro-desafio-final.herokuapp.com/"
+    origin: "http://financeiro-desafio-final.herokuapp.com"
   }
 ));
 app.use(express.json());
